@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard — Sun Son Solar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+
+<div class="app-shell">
+    <aside class="app-sidebar">
+        <a href="admin-dashboard.html" class="brand brand--dark">
+            <span class="brand__mark" aria-hidden="true"></span>
+            Sun Son Solar
+        </a>
+        <nav class="app-sidebar__nav" aria-label="Dashboard">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="#timein">Time In</a>
+            <a href="#logs">Time Logs</a>
+            <a href="index.html">View Website</a>
+        </nav>
+        <div class="app-sidebar__user">
+            <p class="app-sidebar__name" id="userName">Employee</p>
+            <p class="app-sidebar__role" id="userRole">Sun Son Solar</p>
+            <a href="index.html" class="btn btn--ghost-light btn--small" id="logout">Log out</a>
+        </div>
+    </aside>
+
+    <main class="app-content">
+        <div class="page-title">
+            <h1>Admin Dashboard</h1>
+            <p>Welcome<span id="welcomeName"></span>. Here's an overview of Sun Son Solar.</p>
+        </div>
+
+        <div class="stat-grid" style="margin-top: 28px;">
+            <div class="stat-card"><p class="stat-card__num">—</p><p class="stat-card__label">Employees</p></div>
+            <div class="stat-card"><p class="stat-card__num">—</p><p class="stat-card__label">Customers</p></div>
+            <div class="stat-card"><p class="stat-card__num">—</p><p class="stat-card__label">Products</p></div>
+            <div class="stat-card"><p class="stat-card__num" id="todayCount">0</p><p class="stat-card__label">Time-ins today (this device)</p></div>
+        </div>
+
+        <section class="panel" id="timein">
+            <div class="panel__head"><h2>Time In</h2></div>
+            <div class="timein-page">
+                <p class="timein-page__eyebrow">Tap the button when you arrive. No need to go to the office first.</p>
+                <button type="button" class="timein-button" id="timeInBtn">
+                    <span class="timein-button__icon" aria-hidden="true"></span>
+                    <span class="timein-button__label">TIME IN</span>
+                </button>
+                <p class="timein-page__status" id="timeInStatus" role="status"></p>
+            </div>
+        </section>
+
+        <section class="panel" id="logs">
+            <div class="panel__head"><h2>Recent time logs</h2></div>
+            <table class="table">
+                <thead><tr><th>Name</th><th>Time</th><th>Coordinates</th></tr></thead>
+                <tbody id="logBody">
+                    <tr><td colspan="3" class="empty-note">No time-ins yet.</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
